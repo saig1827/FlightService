@@ -1,0 +1,69 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+      {{ title }}
+  </h1>
+  <div>
+    <!DOCTYPE html>
+    <div class="col-md-6">
+      <h2 class="text-center">Enter Details to Seearch Flight</h2>
+    <form>
+      <div class="form-group">
+        <label for="flightNumber">Flight Number:</label>
+        <input type="flightNumber" [(ngModel)]="data.flightNumber" name="flightNumber" class="form-control" id="flightNumber">
+      </div>
+    
+      <div class="form-group">
+        <label for="origin">Origin:</label>
+        <input [(ngModel)]="data.origin"  name="origin" class="form-control" id="origin">
+      </div>
+    
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <input [(ngModel)]="data.destination"  name="destination" class="form-control" id="destination">
+      </div>
+    
+      <div class="form-group">
+        <label for="inputDateStr">Input Date:</label>
+        <input [(ngModel)]="data.inputDateStr"  name="inputDateStr" class="form-control" id="inputDateStr">
+      </div>
+    
+    
+      <button class="btn btn-success" (click)="getFlight()">Search</button>
+    
+      <table class="table table-striped" border="1">
+        <thead>
+        <tr>
+          <th>Flight Number</th>
+          <th>Carrier</th>
+          <th>Origin</th>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th>Arrival</th>
+          <th>Aircraft</th>
+          <th>Distance</th>
+          <th>Travel Time</th>
+          <th>Status</th>
+    
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let searchResult of searchResultList">
+          <td>{{searchResult.flightNumber}}</td>
+          <td>{{searchResult.carrier}}</td>
+          <td>{{searchResult.origin}}</td>
+          <td>{{searchResult.departure}}</td>
+          <td>{{searchResult.destination}}</td>
+          <td>{{searchResult.arrival}}</td>
+          <td>{{searchResult.aircraft}}</td>
+          <td>{{searchResult.distance}}</td>
+          <td>{{searchResult.travelTime}}</td>
+          <td>{{searchResult.status}}</td>
+        </tr>
+        </tbody>
+      </table>
+    
+    </form>
+    </div>
+
+
